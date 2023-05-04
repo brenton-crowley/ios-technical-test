@@ -94,6 +94,7 @@ struct StationsMapView: UIViewRepresentable {
             
             if let coordinate = view.annotation?.coordinate,
                let station = stationsMap.model.getStationForCoordinate(coordinate){
+                
                 stationsMap.selectedStation = station
                 print("Station selected: \(station.place.name)")
             }

@@ -30,13 +30,10 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
         // set up location manager
         locationManager.delegate = self
         
-        // make a call to fetch something
-        
         // load api key from plist
         if let plist = Bundle.loadAPIKeyPlistName(APIConstants.apiKeyPlistFilename),
            let apiKey = plist.first {
             APIConstants.apiKey = apiKey
-            fetchStations()
         } else {
             self.stations = [ Station.stationAsNoApiKeySuppliedMessage ]
         }
@@ -45,7 +42,6 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
     // MARK: - Onboarding Intents
     
     func requestGeolocationPermission() {
-        // Request location persmission
         // Update `Privacy - Location When In Use Usage Description` flag in info.plist with string for request
         locationManager.requestWhenInUseAuthorization()
     }
@@ -78,8 +74,6 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
                 guard let data = try await self.performRequest(request, expectedResponseCode: 200, printResponse: true) else { return }
                 
                 guard let response =  try self.parseJSONData(data, type: RootWeatherResponse.self) else { return }
-                
-//                dump(response)
                 
                 self.observation = response.places.first?.observations.first
                 
@@ -145,8 +139,7 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
                 hasFetchedStations = true
             }
         }
-        
-        
+
         // Stop updating the location after we get it if we only need it once.
         print(locations.first ?? "no location")
     }

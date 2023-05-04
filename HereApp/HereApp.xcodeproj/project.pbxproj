@@ -27,6 +27,9 @@
 		84CB138E2A03767300301F9E /* GetDeparturesForStationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB138D2A03767300301F9E /* GetDeparturesForStationRequest.swift */; };
 		84CB13902A0376EC00301F9E /* DepartureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB138F2A0376EC00301F9E /* DepartureResponse.swift */; };
 		84CB13922A03793100301F9E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13912A03793100301F9E /* Data+Extensions.swift */; };
+		84CB13942A03864C00301F9E /* StationDetailViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13932A03864C00301F9E /* StationDetailViewRepresentable.swift */; };
+		84CB13972A03889400301F9E /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CB13962A03889400301F9E /* Metal.framework */; };
+		84CB13992A03981000301F9E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13982A03981000301F9E /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		84CB138D2A03767300301F9E /* GetDeparturesForStationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeparturesForStationRequest.swift; sourceTree = "<group>"; };
 		84CB138F2A0376EC00301F9E /* DepartureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureResponse.swift; sourceTree = "<group>"; };
 		84CB13912A03793100301F9E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		84CB13932A03864C00301F9E /* StationDetailViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewRepresentable.swift; sourceTree = "<group>"; };
+		84CB13962A03889400301F9E /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		84CB13982A03981000301F9E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CB13972A03889400301F9E /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +79,7 @@
 			children = (
 				84581BDF2A0311E3001E79C8 /* HereApp */,
 				84581BDE2A0311E3001E79C8 /* Products */,
+				84CB13952A03889400301F9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +186,7 @@
 			children = (
 				84CB13732A03357500301F9E /* Bundle+Extensions.swift */,
 				84CB13912A03793100301F9E /* Data+Extensions.swift */,
+				84CB13982A03981000301F9E /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -205,8 +214,17 @@
 				84CB13862A035ECA00301F9E /* StationDetailView.m */,
 				84CB13882A035F9900301F9E /* StationDetailView.h */,
 				84CB13852A035ECA00301F9E /* HereApp-Bridging-Header.h */,
+				84CB13932A03864C00301F9E /* StationDetailViewRepresentable.swift */,
 			);
 			path = StationDetailView;
+			sourceTree = "<group>";
+		};
+		84CB13952A03889400301F9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84CB13962A03889400301F9E /* Metal.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CB13942A03864C00301F9E /* StationDetailViewRepresentable.swift in Sources */,
 				84581BF52A0319E3001E79C8 /* Requestable.swift in Sources */,
 				84581BFA2A031C75001E79C8 /* SearchViewModel.swift in Sources */,
 				84581BF82A031A6A001E79C8 /* APIManageable.swift in Sources */,
@@ -291,6 +310,7 @@
 				84CB138C2A036CE400301F9E /* WeatherResponse.swift in Sources */,
 				84581BE32A0311E3001E79C8 /* SearchView.swift in Sources */,
 				84581BE12A0311E3001E79C8 /* HereApp.swift in Sources */,
+				84CB13992A03981000301F9E /* String+Extensions.swift in Sources */,
 				84CB136C2A0324C900301F9E /* GetStationsNearMeRequest.swift in Sources */,
 				84CB13772A033FBD00301F9E /* StationsMapView.swift in Sources */,
 				84CB13872A035ECA00301F9E /* StationDetailView.m in Sources */,
