@@ -19,6 +19,7 @@
 		84CB13712A03350100301F9E /* apiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CB13702A03350100301F9E /* apiKey.plist */; };
 		84CB13742A03357500301F9E /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13732A03357500301F9E /* Bundle+Extensions.swift */; };
 		84CB13772A033FBD00301F9E /* StationsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13762A033FBD00301F9E /* StationsMapView.swift */; };
+		84CB137D2A034C2900301F9E /* LocationDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB137C2A034C2900301F9E /* LocationDeniedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		84CB13702A03350100301F9E /* apiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apiKey.plist; sourceTree = "<group>"; };
 		84CB13732A03357500301F9E /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		84CB13762A033FBD00301F9E /* StationsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsMapView.swift; sourceTree = "<group>"; };
+		84CB137C2A034C2900301F9E /* LocationDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDeniedView.swift; sourceTree = "<group>"; };
+		84CB137F2A03528700301F9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 		84581BDF2A0311E3001E79C8 /* HereApp */ = {
 			isa = PBXGroup;
 			children = (
+				84CB137F2A03528700301F9E /* Info.plist */,
 				84CB13702A03350100301F9E /* apiKey.plist */,
 				84CB136F2A0334F000301F9E /* Resources */,
 				84581BF12A03199F001E79C8 /* Core */,
@@ -89,6 +93,7 @@
 		84581BEF2A03197C001E79C8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				84CB137B2A034C1C00301F9E /* Onboarding */,
 				84CB13752A033FB100301F9E /* Map */,
 				84581BF02A031993001E79C8 /* SearchView */,
 			);
@@ -161,6 +166,14 @@
 				84CB13762A033FBD00301F9E /* StationsMapView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		84CB137B2A034C1C00301F9E /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				84CB137C2A034C2900301F9E /* LocationDeniedView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +251,7 @@
 				84581BFA2A031C75001E79C8 /* SearchViewModel.swift in Sources */,
 				84581BF82A031A6A001E79C8 /* APIManageable.swift in Sources */,
 				84CB136E2A03261100301F9E /* StationResponse.swift in Sources */,
+				84CB137D2A034C2900301F9E /* LocationDeniedView.swift in Sources */,
 				84581BE32A0311E3001E79C8 /* SearchView.swift in Sources */,
 				84581BE12A0311E3001E79C8 /* HereApp.swift in Sources */,
 				84CB136C2A0324C900301F9E /* GetStationsNearMeRequest.swift in Sources */,
@@ -374,6 +388,8 @@
 				DEVELOPMENT_TEAM = WKQCTTBW95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HereApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App detects your location to display nearby stations.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -403,6 +419,8 @@
 				DEVELOPMENT_TEAM = WKQCTTBW95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HereApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The App detects your location to display nearby stations.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

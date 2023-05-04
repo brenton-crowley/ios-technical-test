@@ -14,14 +14,44 @@ struct SearchView: View {
     
     var body: some View {
         ZStack {
-            StationsMapView(selectedStation: $selectedStation)
-                .ignoresSafeArea()
-                .toolbar(.hidden)
-                .sheet(item: $selectedStation) { station in
-                    // create a station detail view instance.
-                    // TODO: Make a station detail view with required information. This will likely be an Objective-C view
-                    Text("Station Name: \(station.place.name)")
+            
+            switch viewModel.authorisationState {
+                
+            case .authorizedAlways, .authorizedWhenInUse:
+                // if approved, show home view
+                if viewModel.hasFetchedStations {
+                    mapView
+                } else {
+                    ProgressView()
                 }
+            case .notDetermined:
+                // if undertermined show onboarding
+                onboardingView
+            case .denied:
+                // if denied, show go to settings view
+                LocationDeniedView()
+            default:
+                EmptyView()
+            }
+        }
+    }
+    
+    var mapView: some View {
+        StationsMapView(selectedStation: $selectedStation)
+            .ignoresSafeArea()
+            .toolbar(.hidden)
+            .sheet(item: $selectedStation) { station in
+                // create a station detail view instance.
+                // TODO: Make a station detail view with required information. This will likely be an Objective-C view
+                Text("Station Name: \(station.place.name)")
+            }
+    }
+    
+    var onboardingView: some View {
+        Button {
+            viewModel.requestGeolocationPermission()
+        } label: {
+            Label("Authorise Location", systemImage: "location.circle")
         }
     }
 }

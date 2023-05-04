@@ -16,6 +16,7 @@ struct StationsMapView: UIViewRepresentable {
     struct Constants {
         
         static let annotationIdentifier:String = "stationAnnotation"
+        static let regionDegreeDelta = 0.01
         
     }
     
@@ -40,7 +41,16 @@ struct StationsMapView: UIViewRepresentable {
         
         // remove any existing annotations so we don't overlap.
         uiView.removeAnnotations(uiView.annotations)
-        uiView.showAnnotations(model.getStationsAsAnnotations(), animated: true) // display the animations and zoom to fit.
+        uiView.showAnnotations(model.getStationsAsAnnotations(), animated: false) // display the animations.
+        
+        // zoom the camera
+        uiView.setRegion(MKCoordinateRegion(
+            center: uiView.userLocation.coordinate,
+            span: MKCoordinateSpan(
+                latitudeDelta: StationsMapView.Constants.regionDegreeDelta,
+                longitudeDelta: StationsMapView.Constants.regionDegreeDelta)),
+                         animated: false)
+    
     }
     
     /// Destroys the map view.

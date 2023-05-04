@@ -14,9 +14,9 @@ struct GetStationsNearMeRequest:Requestable {
     var queryParams: [String : String?] = [:]
     
     init(
-        location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -37.840935, longitude: 144.946457),
+        _ location: CLLocation = SearchViewModel.Constants.melbourneLocation,
         radiusInMeters: Int = 500) {
-        self.queryParams["in"] = "\(location.latitude),\(location.longitude)"
+        self.queryParams["in"] = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
         self.queryParams["r"] = "\(radiusInMeters)"
     }
     
