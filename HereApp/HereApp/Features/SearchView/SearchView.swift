@@ -21,6 +21,12 @@ struct SearchView: View {
                 // if approved, show home view
                 if viewModel.hasFetchedStations {
                     mapView
+                        .onChange(of: selectedStation) { _ in
+                            if let selectedStation = selectedStation {
+                                // request weather details
+                                viewModel.fetchWeatherForStation(selectedStation)
+                            }
+                        }
                 } else {
                     ProgressView()
                 }
@@ -34,6 +40,7 @@ struct SearchView: View {
                 EmptyView()
             }
         }
+        
     }
     
     var mapView: some View {

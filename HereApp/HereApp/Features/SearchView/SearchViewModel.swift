@@ -18,6 +18,7 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
     @Published private(set) var stations: [Station] = []
     @Published private(set) var authorisationState = CLAuthorizationStatus.notDetermined
     @Published private(set) var hasFetchedStations = false
+    @Published private(set) var observation:Observation?
     
     private(set) var locationManager = CLLocationManager()
     
@@ -56,9 +57,29 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
         Task {
             do {
                 guard let data = try await self.performRequest(request, expectedResponseCode: 200, printResponse: true) else { return }
-                guard let response =  try self.parseJSONData(data, type: RootResponse.self) else { return }
+                guard let response =  try self.parseJSONData(data, type: RootStationResponse.self) else { return }
                 
                 self.stations = response.stations
+                
+            } catch {
+                print(error)
+            }
+            
+        }
+    }
+    
+    @MainActor
+    func fetchWeatherForStation(_ station:Station) {
+        let location = CLLocation(latitude: station.place.location.lat, longitude: station.place.location.lng)
+        let request = GetWeatherObservationRequest(location)
+        Task {
+            do {
+                guard let data = try await self.performRequest(request, expectedResponseCode: 200, printResponse: true) else { return }
+                guard let response =  try self.parseJSONData(data, type: RootWeatherResponse.self) else { return }
+                
+                dump(response)
+                
+                self.observation = response.places.first?.observations.first
                 
             } catch {
                 print(error)

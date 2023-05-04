@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct RootResponse: Decodable {
+struct RootStationResponse: Decodable {
     let stations: [Station]
 }
 
-struct Station: Decodable, Identifiable {
+struct Station: Decodable, Identifiable, Equatable {
+    
+    static func == (lhs: Station, rhs: Station) -> Bool { lhs.id == rhs.id }
     
     let place: Place
     var id: String { place.id }
