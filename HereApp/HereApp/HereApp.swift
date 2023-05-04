@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct HereAppApp: App {
+struct HereApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
+                .environmentObject(SearchViewModel())
         }
     }
 }

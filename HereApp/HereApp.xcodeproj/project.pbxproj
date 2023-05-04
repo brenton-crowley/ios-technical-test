@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84581BE12A0311E3001E79C8 /* HereAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BE02A0311E3001E79C8 /* HereAppApp.swift */; };
-		84581BE32A0311E3001E79C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BE22A0311E3001E79C8 /* ContentView.swift */; };
+		84581BE12A0311E3001E79C8 /* HereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BE02A0311E3001E79C8 /* HereApp.swift */; };
+		84581BE32A0311E3001E79C8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BE22A0311E3001E79C8 /* SearchView.swift */; };
 		84581BE52A0311E4001E79C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84581BE42A0311E4001E79C8 /* Assets.xcassets */; };
 		84581BE82A0311E4001E79C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84581BE72A0311E4001E79C8 /* Preview Assets.xcassets */; };
+		84581BF52A0319E3001E79C8 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BF42A0319E3001E79C8 /* Requestable.swift */; };
+		84581BF82A031A6A001E79C8 /* APIManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BF72A031A6A001E79C8 /* APIManageable.swift */; };
+		84581BFA2A031C75001E79C8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84581BF92A031C75001E79C8 /* SearchViewModel.swift */; };
+		84CB136C2A0324C900301F9E /* GetStationsNearMeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB136B2A0324C900301F9E /* GetStationsNearMeRequest.swift */; };
+		84CB136E2A03261100301F9E /* StationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB136D2A03261100301F9E /* StationResponse.swift */; };
+		84CB13712A03350100301F9E /* apiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CB13702A03350100301F9E /* apiKey.plist */; };
+		84CB13742A03357500301F9E /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13732A03357500301F9E /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84581BDD2A0311E3001E79C8 /* HereApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HereApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84581BE02A0311E3001E79C8 /* HereAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAppApp.swift; sourceTree = "<group>"; };
-		84581BE22A0311E3001E79C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84581BE02A0311E3001E79C8 /* HereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereApp.swift; sourceTree = "<group>"; };
+		84581BE22A0311E3001E79C8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		84581BE42A0311E4001E79C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84581BE72A0311E4001E79C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84581BF42A0319E3001E79C8 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		84581BF72A031A6A001E79C8 /* APIManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManageable.swift; sourceTree = "<group>"; };
+		84581BF92A031C75001E79C8 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		84CB136B2A0324C900301F9E /* GetStationsNearMeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStationsNearMeRequest.swift; sourceTree = "<group>"; };
+		84CB136D2A03261100301F9E /* StationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponse.swift; sourceTree = "<group>"; };
+		84CB13702A03350100301F9E /* apiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apiKey.plist; sourceTree = "<group>"; };
+		84CB13732A03357500301F9E /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,11 @@
 		84581BDF2A0311E3001E79C8 /* HereApp */ = {
 			isa = PBXGroup;
 			children = (
-				84581BE02A0311E3001E79C8 /* HereAppApp.swift */,
-				84581BE22A0311E3001E79C8 /* ContentView.swift */,
+				84CB13702A03350100301F9E /* apiKey.plist */,
+				84CB136F2A0334F000301F9E /* Resources */,
+				84581BF12A03199F001E79C8 /* Core */,
+				84581BEF2A03197C001E79C8 /* Features */,
+				84581BE02A0311E3001E79C8 /* HereApp.swift */,
 				84581BE42A0311E4001E79C8 /* Assets.xcassets */,
 				84581BE62A0311E4001E79C8 /* Preview Content */,
 			);
@@ -65,6 +82,74 @@
 				84581BE72A0311E4001E79C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84581BEF2A03197C001E79C8 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				84581BF02A031993001E79C8 /* SearchView */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		84581BF02A031993001E79C8 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				84581BE22A0311E3001E79C8 /* SearchView.swift */,
+				84581BF92A031C75001E79C8 /* SearchViewModel.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		84581BF12A03199F001E79C8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				84CB13722A03356800301F9E /* Extensions */,
+				84581BF32A0319A9001E79C8 /* Models */,
+				84581BF22A0319A2001E79C8 /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		84581BF22A0319A2001E79C8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				84581BFB2A031C8F001E79C8 /* Requests */,
+				84581BF42A0319E3001E79C8 /* Requestable.swift */,
+				84581BF72A031A6A001E79C8 /* APIManageable.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		84581BF32A0319A9001E79C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84CB136D2A03261100301F9E /* StationResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84581BFB2A031C8F001E79C8 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				84CB136B2A0324C900301F9E /* GetStationsNearMeRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		84CB136F2A0334F000301F9E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84CB13722A03356800301F9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84CB13732A03357500301F9E /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84581BE82A0311E4001E79C8 /* Preview Assets.xcassets in Resources */,
+				84CB13712A03350100301F9E /* apiKey.plist in Resources */,
 				84581BE52A0311E4001E79C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84581BE32A0311E3001E79C8 /* ContentView.swift in Sources */,
-				84581BE12A0311E3001E79C8 /* HereAppApp.swift in Sources */,
+				84581BF52A0319E3001E79C8 /* Requestable.swift in Sources */,
+				84581BFA2A031C75001E79C8 /* SearchViewModel.swift in Sources */,
+				84581BF82A031A6A001E79C8 /* APIManageable.swift in Sources */,
+				84CB136E2A03261100301F9E /* StationResponse.swift in Sources */,
+				84581BE32A0311E3001E79C8 /* SearchView.swift in Sources */,
+				84581BE12A0311E3001E79C8 /* HereApp.swift in Sources */,
+				84CB136C2A0324C900301F9E /* GetStationsNearMeRequest.swift in Sources */,
+				84CB13742A03357500301F9E /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
