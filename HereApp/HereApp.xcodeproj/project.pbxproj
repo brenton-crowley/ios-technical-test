@@ -18,6 +18,7 @@
 		84CB136E2A03261100301F9E /* StationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB136D2A03261100301F9E /* StationResponse.swift */; };
 		84CB13712A03350100301F9E /* apiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CB13702A03350100301F9E /* apiKey.plist */; };
 		84CB13742A03357500301F9E /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13732A03357500301F9E /* Bundle+Extensions.swift */; };
+		84CB13772A033FBD00301F9E /* StationsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13762A033FBD00301F9E /* StationsMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		84CB136D2A03261100301F9E /* StationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponse.swift; sourceTree = "<group>"; };
 		84CB13702A03350100301F9E /* apiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = apiKey.plist; sourceTree = "<group>"; };
 		84CB13732A03357500301F9E /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		84CB13762A033FBD00301F9E /* StationsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		84581BEF2A03197C001E79C8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				84CB13752A033FB100301F9E /* Map */,
 				84581BF02A031993001E79C8 /* SearchView */,
 			);
 			path = Features;
@@ -150,6 +153,14 @@
 				84CB13732A03357500301F9E /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84CB13752A033FB100301F9E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				84CB13762A033FBD00301F9E /* StationsMapView.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				84581BE32A0311E3001E79C8 /* SearchView.swift in Sources */,
 				84581BE12A0311E3001E79C8 /* HereApp.swift in Sources */,
 				84CB136C2A0324C900301F9E /* GetStationsNearMeRequest.swift in Sources */,
+				84CB13772A033FBD00301F9E /* StationsMapView.swift in Sources */,
 				84CB13742A03357500301F9E /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

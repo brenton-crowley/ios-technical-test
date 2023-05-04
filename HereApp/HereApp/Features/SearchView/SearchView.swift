@@ -10,12 +10,18 @@ import SwiftUI
 struct SearchView: View {
     
     @EnvironmentObject private var viewModel: SearchViewModel
+    @State private var selectedStation:Station?
     
     var body: some View {
-        NavigationView {
-            List(viewModel.stations) { station in
-                Text(station.place.name)
-            }
+        ZStack {
+            StationsMapView(selectedStation: $selectedStation)
+                .ignoresSafeArea()
+                .toolbar(.hidden)
+                .sheet(item: $selectedStation) { station in
+                    // create a station detail view instance.
+                    // TODO: Make a station detail view with required information. This will likely be an Objective-C view
+                    Text("Station Name: \(station.place.name)")
+                }
         }
     }
 }

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import MapKit
+import CoreLocation
 
 class SearchViewModel: ObservableObject, APIManageable {
     
@@ -42,4 +44,38 @@ class SearchViewModel: ObservableObject, APIManageable {
         }
     }
     
+    // MARK: - StationsMapView methods
+    
+    /// Map self.stations to an MKPointAnnotation
+    /// - Returns: Array of [MKPointAnnotation] mapped from self.stations
+    public func getStationsAsAnnotations() -> [MKPointAnnotation] {
+        
+        var annotations:[MKPointAnnotation] = self.stations.map { station in
+            let latitude = station.place.location.lat
+            let longitude = station.place.location.lng
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude,
+                                                           longitude:longitude)
+            annotation.title = station.place.name
+            
+            return annotation
+        }
+        
+        return annotations
+    }
+    
+    /// Search for a station that matches the passed in coordinates.
+    /// - Parameter coordinate: The coordinates of the business that was tapped.
+    /// - Returns: A Station if coordinates match, otherwise nil
+    public func getStationForCoordinate(_ coordinate:CLLocationCoordinate2D) -> Station? {
+        
+        return (self.stations).first { station in
+            
+            let sameLatitude = (station.place.location.lat == coordinate.latitude)
+            let sameLongitude = (station.place.location.lng == coordinate.longitude)
+            
+            return sameLatitude && sameLongitude
+        }
+    }
 }
