@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *temperatureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet UITableView *departuresTableView;
+@property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
 
 
 @property (weak, nonatomic) id<UITableViewDelegate, UITableViewDataSource> parent;

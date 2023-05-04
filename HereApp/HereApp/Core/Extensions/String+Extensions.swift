@@ -18,8 +18,8 @@ extension String {
         if let date = dateFormatter.date(from: self) {
             // Create a second date formatter to format the date into a human-readable string
             let displayFormatter = DateFormatter()
-            displayFormatter.dateStyle = .long
-            displayFormatter.timeStyle = .medium
+            displayFormatter.dateStyle = .medium
+            displayFormatter.timeStyle = .short
             
             let displayString = displayFormatter.string(from: date)
             return displayString // "May 4, 2023 at 6:17:00 AM"

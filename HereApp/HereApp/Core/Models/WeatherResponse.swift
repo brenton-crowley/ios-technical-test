@@ -72,6 +72,6 @@ struct WeatherPlace: Decodable {
 struct Observation: Decodable {
     
     let description, iconName, iconLink: String
-    let temperature: Int
+    let temperature: Double
     
 }

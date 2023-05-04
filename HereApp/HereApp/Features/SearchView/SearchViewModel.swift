@@ -20,6 +20,7 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
     @Published private(set) var hasFetchedStations = false
     @Published private(set) var observation:Observation?
     @Published private(set) var departures:[Departure]?
+    @Published private(set) var weatherImage:UIImage?
     
     private(set) var locationManager = CLLocationManager()
     
@@ -77,6 +78,8 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
                 
                 self.observation = response.places.first?.observations.first
                 
+                loadWeatherIcon()
+                
             } catch {
                 print(error)
             }
@@ -94,14 +97,26 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
                 guard let data = try await self.performRequest(request, expectedResponseCode: 200, printResponse: true) else { return }
                 guard let response =  try self.parseJSONData(data, type: RootDepartureResponse.self) else { return }
                 
-                dump(response)
-                
                 self.departures = response.boards.first?.departures
                 
             } catch {
                 print(error)
             }
             
+        }
+    }
+    
+    // MARK: - LoadImage
+    @MainActor
+    func loadWeatherIcon() {
+        if let urlText = observation?.iconLink,
+           let url = URL(string: urlText) {
+            
+            print("urlText: \(urlText)")
+            
+            Task {
+                self.weatherImage = await UIImage.loadImageFromURL(url)
+            }
         }
     }
     

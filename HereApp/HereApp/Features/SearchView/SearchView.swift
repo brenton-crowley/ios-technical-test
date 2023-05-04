@@ -50,7 +50,7 @@ struct SearchView: View {
             .ignoresSafeArea()
             .toolbar(.hidden)
             .sheet(item: $selectedStation) { station in
-                StationDetailViewWrapper()
+                StationDetailViewWrapper(station: station)
             }
     }
     
