@@ -19,12 +19,12 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Station Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-K4-pn3" userLabel="Station Name">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="24"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="top" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qgw-Cy-f8D" userLabel="Horizontal Stack">
-                            <rect key="frame" x="0.0" y="24" width="393" height="129"/>
+                            <rect key="frame" x="0.0" y="39" width="393" height="129"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-g3-uoB">
                                     <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="129"/>
@@ -52,8 +52,8 @@
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departures" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-un-cMb">
-                            <rect key="frame" x="0.0" y="153" width="393" height="90"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <rect key="frame" x="0.0" y="168" width="393" height="75"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -74,7 +74,7 @@
                         <constraint firstItem="oGs-bD-6hq" firstAttribute="top" secondItem="xFA-un-cMb" secondAttribute="bottom" id="r06-kQ-7Pi"/>
                         <constraint firstItem="AXb-K4-pn3" firstAttribute="top" secondItem="jQZ-0J-tpK" secondAttribute="top" id="swH-De-tud"/>
                         <constraint firstItem="AXb-K4-pn3" firstAttribute="leading" secondItem="jQZ-0J-tpK" secondAttribute="leading" id="wOF-8R-H2m"/>
-                        <constraint firstItem="qgw-Cy-f8D" firstAttribute="top" secondItem="AXb-K4-pn3" secondAttribute="bottom" id="wgH-LB-Kmt"/>
+                        <constraint firstItem="qgw-Cy-f8D" firstAttribute="top" secondItem="AXb-K4-pn3" secondAttribute="bottom" constant="15" id="wgH-LB-Kmt"/>
                     </constraints>
                 </view>
             </subviews>

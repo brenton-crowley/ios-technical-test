@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Reflects JSON object from this endpoint: // https://transit.hereapi.com/v8/stations
 struct RootStationResponse: Decodable {
     let stations: [Station]
 }

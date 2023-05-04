@@ -34,10 +34,15 @@ struct StationDetailViewWrapper: UIViewRepresentable {
         
         view.departuresTableView?.register(UITableViewCell.self, forCellReuseIdentifier: Constants.dequeueIdentifier)
         view.parent = context.coordinator
+        
+        // set alpha to 0
         view.iconView?.alpha = Constants.hideAlpha
         view.temperatureLabel?.alpha = Constants.hideAlpha
         view.descLabel?.alpha = Constants.hideAlpha
         
+        // default label values
+        view.iconView?.image = nil
+        view.stationNameLabel?.text = ""
         view.temperatureLabel?.text = ""
         view.descLabel?.text = ""
         
@@ -64,19 +69,23 @@ struct StationDetailViewWrapper: UIViewRepresentable {
     private func fadeInViews(_ view: StationDetailView) {
         
         // Set initial alpha to 0
-        view.iconView?.alpha = Constants.hideAlpha
-        view.temperatureLabel?.alpha = Constants.hideAlpha
-        view.descLabel?.alpha = Constants.hideAlpha
 
         // Add the image view to your view hierarchy
 
         UIView.animate(withDuration: Constants.animationDuration) {
             // Set the final alpha to 1 inside the animation block
-            view.iconView?.alpha = Constants.showAlpha
-            view.temperatureLabel?.alpha = Constants.showAlpha
-            view.descLabel?.alpha = Constants.showAlpha
+            if let _ = view.iconView?.image { view.iconView?.alpha = Constants.showAlpha }
+            if !(view.temperatureLabel?.text?.isEmpty ?? false) { view.temperatureLabel?.alpha = Constants.showAlpha }
+            if !(view.descLabel?.text?.isEmpty ?? false) { view.descLabel?.alpha = Constants.showAlpha }
         }
         
+    }
+    
+    static func dismantleUIView(_ uiView: UIView, coordinator: Coordinator) {
+        let view:StationDetailView? = (uiView as? StationDetailView)
+        view?.departuresTableView?.dataSource = nil
+        view?.departuresTableView?.delegate = nil
+        view?.parent = nil // remove reference to delegate
     }
     
     // MARK: - Coordinator
