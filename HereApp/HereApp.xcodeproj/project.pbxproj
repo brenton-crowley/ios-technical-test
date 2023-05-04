@@ -24,6 +24,9 @@
 		84CB13872A035ECA00301F9E /* StationDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13862A035ECA00301F9E /* StationDetailView.m */; };
 		84CB138A2A036AA800301F9E /* GetWeatherObservationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13892A036AA800301F9E /* GetWeatherObservationRequest.swift */; };
 		84CB138C2A036CE400301F9E /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB138B2A036CE400301F9E /* WeatherResponse.swift */; };
+		84CB138E2A03767300301F9E /* GetDeparturesForStationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB138D2A03767300301F9E /* GetDeparturesForStationRequest.swift */; };
+		84CB13902A0376EC00301F9E /* DepartureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB138F2A0376EC00301F9E /* DepartureResponse.swift */; };
+		84CB13922A03793100301F9E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB13912A03793100301F9E /* Data+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		84CB13882A035F9900301F9E /* StationDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StationDetailView.h; sourceTree = "<group>"; };
 		84CB13892A036AA800301F9E /* GetWeatherObservationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherObservationRequest.swift; sourceTree = "<group>"; };
 		84CB138B2A036CE400301F9E /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		84CB138D2A03767300301F9E /* GetDeparturesForStationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeparturesForStationRequest.swift; sourceTree = "<group>"; };
+		84CB138F2A0376EC00301F9E /* DepartureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureResponse.swift; sourceTree = "<group>"; };
+		84CB13912A03793100301F9E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 			children = (
 				84CB136D2A03261100301F9E /* StationResponse.swift */,
 				84CB138B2A036CE400301F9E /* WeatherResponse.swift */,
+				84CB138F2A0376EC00301F9E /* DepartureResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 			children = (
 				84CB136B2A0324C900301F9E /* GetStationsNearMeRequest.swift */,
 				84CB13892A036AA800301F9E /* GetWeatherObservationRequest.swift */,
+				84CB138D2A03767300301F9E /* GetDeparturesForStationRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -169,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				84CB13732A03357500301F9E /* Bundle+Extensions.swift */,
+				84CB13912A03793100301F9E /* Data+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +287,7 @@
 				84581BF82A031A6A001E79C8 /* APIManageable.swift in Sources */,
 				84CB136E2A03261100301F9E /* StationResponse.swift in Sources */,
 				84CB137D2A034C2900301F9E /* LocationDeniedView.swift in Sources */,
+				84CB13922A03793100301F9E /* Data+Extensions.swift in Sources */,
 				84CB138C2A036CE400301F9E /* WeatherResponse.swift in Sources */,
 				84581BE32A0311E3001E79C8 /* SearchView.swift in Sources */,
 				84581BE12A0311E3001E79C8 /* HereApp.swift in Sources */,
@@ -285,6 +295,8 @@
 				84CB13772A033FBD00301F9E /* StationsMapView.swift in Sources */,
 				84CB13872A035ECA00301F9E /* StationDetailView.m in Sources */,
 				84CB138A2A036AA800301F9E /* GetWeatherObservationRequest.swift in Sources */,
+				84CB13902A0376EC00301F9E /* DepartureResponse.swift in Sources */,
+				84CB138E2A03767300301F9E /* GetDeparturesForStationRequest.swift in Sources */,
 				84CB13742A03357500301F9E /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

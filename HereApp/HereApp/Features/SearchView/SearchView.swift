@@ -25,6 +25,7 @@ struct SearchView: View {
                             if let selectedStation = selectedStation {
                                 // request weather details
                                 viewModel.fetchWeatherForStation(selectedStation)
+                                viewModel.fetchDeparturesForStation(selectedStation)
                             }
                         }
                 } else {
