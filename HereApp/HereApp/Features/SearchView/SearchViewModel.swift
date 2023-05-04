@@ -108,7 +108,7 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
     
     // MARK: - LoadImage
     @MainActor
-    func loadWeatherIcon() {
+    private func loadWeatherIcon() {
         if let urlText = observation?.iconLink,
            let url = URL(string: urlText) {
             
@@ -181,7 +181,7 @@ class SearchViewModel: NSObject, ObservableObject, APIManageable, CLLocationMana
     }
     
     /// Search for a station that matches the passed in coordinates.
-    /// - Parameter coordinate: The coordinates of the business that was tapped.
+    /// - Parameter coordinate: The coordinates of the station that was tapped.
     /// - Returns: A Station if coordinates match, otherwise nil
     public func getStationForCoordinate(_ coordinate:CLLocationCoordinate2D) -> Station? {
         
