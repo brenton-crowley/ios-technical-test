@@ -11,6 +11,7 @@ enum RequestMethod: String {
     case GET, POST, PUT, PATCH, DELETE
 }
 
+
 struct APIConstants {
     
     // URL Construction
@@ -30,6 +31,9 @@ enum APIError: Error {
     
 }
 
+/// Protocol that serves as a preformatter for URLRequests.
+/// Each successive URLRequest will conform to this protocol and can adjust any of the parameters where needed.
+/// Only supports API keys as a query string, but can implement a bearer token header authorisation.
 protocol Requestable {
     
     // URLComponents

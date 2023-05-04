@@ -23,7 +23,8 @@ struct StationsMapView: UIViewRepresentable {
     @Binding var selectedStation:Station?
 
     @EnvironmentObject private var model:SearchViewModel
-    /// Create the map view to display the business on.
+    
+    
     func makeUIView(context: Context) -> MKMapView {
         
         let mapView = MKMapView()
@@ -36,7 +37,6 @@ struct StationsMapView: UIViewRepresentable {
         
     }
     
-    /// Called when the user interface needs to redraw itself.
     func updateUIView(_ uiView: MKMapView, context: Context) {
         
         // remove any existing annotations so we don't overlap.
@@ -80,13 +80,17 @@ struct StationsMapView: UIViewRepresentable {
                 return existingView
             } else {
                 // create a new annotation view
-                let av = MKMarkerAnnotationView(annotation: annotation,
-                                                reuseIdentifier: StationsMapView.Constants.annotationIdentifier)
-                av.canShowCallout = true
-                av.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-    
-                return av
+                return makeAnnotationViewForAnnotation(annotation)
             }
+        }
+        
+        private func makeAnnotationViewForAnnotation(_ annotation: MKAnnotation) -> MKMarkerAnnotationView {
+            let av = MKMarkerAnnotationView(annotation: annotation,
+                                            reuseIdentifier: StationsMapView.Constants.annotationIdentifier)
+            av.canShowCallout = true
+            av.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+
+            return av
         }
         
         /// Delegate method that sets the selected station when an annotation view's detail disclousure is tapped.

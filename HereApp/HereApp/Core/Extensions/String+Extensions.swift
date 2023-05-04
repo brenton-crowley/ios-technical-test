@@ -9,6 +9,9 @@ import Foundation
 
 extension String {
     
+    /// Helper function that converts a formatted server date into a human readable format.
+    /// Server string format is: "yyyy-MM-dd'T'HH:mm:ssZ"
+    /// - Returns: A human readable string
     func prettyStringDate() -> String {
         
         // Create a date formatter to parse the string

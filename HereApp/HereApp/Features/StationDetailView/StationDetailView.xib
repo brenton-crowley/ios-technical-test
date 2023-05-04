@@ -17,8 +17,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-0J-tpK">
                     <rect key="frame" x="0.0" y="59" width="393" height="749"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Station Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-K4-pn3" userLabel="Station Name">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="24"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Station Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-K4-pn3" userLabel="Station Name">
+                            <rect key="frame" x="10" y="0.0" width="373" height="24"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -51,8 +51,8 @@
                                 <constraint firstAttribute="height" constant="129" id="CoC-e3-MJO"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departures" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-un-cMb">
-                            <rect key="frame" x="0.0" y="168" width="393" height="75"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-un-cMb">
+                            <rect key="frame" x="10" y="168" width="383" height="75"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -68,12 +68,12 @@
                         <constraint firstItem="qgw-Cy-f8D" firstAttribute="leading" secondItem="jQZ-0J-tpK" secondAttribute="leading" id="16y-1H-jni"/>
                         <constraint firstItem="xFA-un-cMb" firstAttribute="top" secondItem="qgw-Cy-f8D" secondAttribute="bottom" id="QOY-9q-0rJ"/>
                         <constraint firstAttribute="trailing" secondItem="qgw-Cy-f8D" secondAttribute="trailing" id="T4x-da-8m6"/>
-                        <constraint firstAttribute="trailing" secondItem="AXb-K4-pn3" secondAttribute="trailing" id="mEY-3L-Rsa"/>
+                        <constraint firstAttribute="trailing" secondItem="AXb-K4-pn3" secondAttribute="trailing" constant="10" id="mEY-3L-Rsa"/>
                         <constraint firstAttribute="trailing" secondItem="xFA-un-cMb" secondAttribute="trailing" id="msd-3n-4fh"/>
-                        <constraint firstItem="xFA-un-cMb" firstAttribute="leading" secondItem="jQZ-0J-tpK" secondAttribute="leading" id="qNm-Mz-Xsp"/>
+                        <constraint firstItem="xFA-un-cMb" firstAttribute="leading" secondItem="jQZ-0J-tpK" secondAttribute="leading" constant="10" id="qNm-Mz-Xsp"/>
                         <constraint firstItem="oGs-bD-6hq" firstAttribute="top" secondItem="xFA-un-cMb" secondAttribute="bottom" id="r06-kQ-7Pi"/>
                         <constraint firstItem="AXb-K4-pn3" firstAttribute="top" secondItem="jQZ-0J-tpK" secondAttribute="top" id="swH-De-tud"/>
-                        <constraint firstItem="AXb-K4-pn3" firstAttribute="leading" secondItem="jQZ-0J-tpK" secondAttribute="leading" id="wOF-8R-H2m"/>
+                        <constraint firstItem="AXb-K4-pn3" firstAttribute="leading" secondItem="jQZ-0J-tpK" secondAttribute="leading" constant="10" id="wOF-8R-H2m"/>
                         <constraint firstItem="qgw-Cy-f8D" firstAttribute="top" secondItem="AXb-K4-pn3" secondAttribute="bottom" constant="15" id="wgH-LB-Kmt"/>
                     </constraints>
                 </view>

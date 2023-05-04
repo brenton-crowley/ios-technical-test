@@ -19,16 +19,13 @@ struct StationDetailViewWrapper: UIViewRepresentable {
         static let animationDuration = 0.5
     }
     
-    // Add any properties you need to pass to the Objective-C view here
-//    var departures:[Departure]?
     @EnvironmentObject private var viewModel:SearchViewModel
     
     let station: Station
     
-    
     func makeUIView(context: Context) -> UIView {
-        // Load the Objective-C view from the nib
         
+        // Load the Objective-C view from the nib
         let nib = UINib(nibName: Constants.nibName, bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil)[0] as! StationDetailView
         
@@ -49,13 +46,18 @@ struct StationDetailViewWrapper: UIViewRepresentable {
         return view
     }
     
+    /// As we make asynchronous calls, place any text updates in the updateUIView method.
     func updateUIView(_ uiView: UIView, context: Context) {
         
         let view:StationDetailView? = (uiView as? StationDetailView)
         
-        let temperature = viewModel.observation?.temperature != nil ? "\(viewModel.observation!.temperature.roundedToNearestTenth())ºC" : ""
-        
+        // Departure Details
         view?.departuresTableView?.reloadData()
+        
+        
+        // Observation Details
+        let temperature = viewModel.observation?.temperature != nil ? "\(viewModel.observation!.temperature.roundedToNearestTenth())ºC" : ""
+
         view?.iconView?.image = viewModel.weatherImage
         view?.stationNameLabel?.text = station.place.name
         view?.temperatureLabel?.text = temperature
@@ -67,10 +69,6 @@ struct StationDetailViewWrapper: UIViewRepresentable {
     }
 
     private func fadeInViews(_ view: StationDetailView) {
-        
-        // Set initial alpha to 0
-
-        // Add the image view to your view hierarchy
 
         UIView.animate(withDuration: Constants.animationDuration) {
             // Set the final alpha to 1 inside the animation block
@@ -78,7 +76,6 @@ struct StationDetailViewWrapper: UIViewRepresentable {
             if !(view.temperatureLabel?.text?.isEmpty ?? false) { view.temperatureLabel?.alpha = Constants.showAlpha }
             if !(view.descLabel?.text?.isEmpty ?? false) { view.descLabel?.alpha = Constants.showAlpha }
         }
-        
     }
     
     static func dismantleUIView(_ uiView: UIView, coordinator: Coordinator) {
@@ -93,6 +90,7 @@ struct StationDetailViewWrapper: UIViewRepresentable {
     
     class Coordinator: NSObject, UITableViewDelegate, UITableViewDataSource {
         
+        /// Set up access back to the StationDetailViewWrapper
         let parent:StationDetailViewWrapper
         
         init(parent:StationDetailViewWrapper) {

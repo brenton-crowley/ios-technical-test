@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Patches a viewModel to give it functionality to perform URLRequests based on Requestable requests.
+/// Also enables the parsing of returned JSON data into defined Decodable models.
 protocol APIManageable {
     
     func performRequest(_ request: Requestable, expectedResponseCode: Int, printResponse: Bool) async throws -> Data?

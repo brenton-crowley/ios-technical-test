@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *stationNameLabel;
 
 
+/// Set the parent to also set the dataSource and delegate on the tableView
 @property (weak, nonatomic) id<UITableViewDelegate, UITableViewDataSource> parent;
 
 @end

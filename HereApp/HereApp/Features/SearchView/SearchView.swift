@@ -14,8 +14,11 @@ struct SearchView: View {
     @State private var selectedStation:Station?
     
     var body: some View {
-        ZStack {
-            
+        viewForAuthorisationState
+    }
+    
+    var viewForAuthorisationState: some View {
+        Group {
             switch viewModel.authorisationState {
                 
             case .authorizedAlways, .authorizedWhenInUse:
@@ -30,11 +33,11 @@ struct SearchView: View {
                             }
                         }
                 } else {
-                    ProgressView()
+                    ProgressView() // making API call
                 }
             case .notDetermined:
-                // if undertermined show onboarding
-                onboardingView
+                // if undertermined show permission request view
+                requestPermissionView
             case .denied:
                 // if denied, show go to settings view
                 LocationDeniedView()
@@ -42,7 +45,6 @@ struct SearchView: View {
                 EmptyView()
             }
         }
-        
     }
     
     var mapView: some View {
@@ -54,7 +56,7 @@ struct SearchView: View {
             }
     }
     
-    var onboardingView: some View {
+    var requestPermissionView: some View {
         Button {
             viewModel.requestGeolocationPermission()
         } label: {
@@ -66,5 +68,6 @@ struct SearchView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
+            .environmentObject(SearchViewModel())
     }
 }

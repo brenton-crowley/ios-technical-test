@@ -9,6 +9,9 @@ import Foundation
 
 extension Bundle {
     
+    /// Helper function that loads a property list from the bundle
+    /// - Parameter name: The filename of the property list file in the bundle
+    /// - Returns: An optional array of string values.
     static func loadAPIKeyPlistName(_ name:String) -> [String]? {
         
         guard let url = Bundle.main.url(
